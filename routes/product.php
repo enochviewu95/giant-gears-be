@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProductController;
-use App\Http\Requests\ProductRequest;
-use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 Route::controller(ProductController::class)->group(function () {

@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ProductController extends Controller
 {
@@ -32,9 +31,9 @@ class ProductController extends Controller
      * @return array An array of products is being returned, with the products sorted by the latest
      * created date.
      */
-    public function getProducts(): Collection
+    public function getProducts(): LengthAwarePaginator
     {
-        return Product::latest()->get();
+        return Product::latest()->paginate();
     }
 
 
